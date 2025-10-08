@@ -1,0 +1,65 @@
+// para hacerlo mas grande o mas pequeño primero hay que 
+//manteneer click derecho para que aparezca 
+// pulsar p hacerlo pequeño o pulsar g hacerlo grande
+// 1scale
+int tamOso = 50;
+
+
+int escala(int valor, int size) {
+  return valor * size / 50;
+}
+
+// función oso
+boolean oso(int x, int y, int size) {
+  // OREJAS
+  ellipse(x-escala(60, size), y-escala(60, size), escala(70, size), escala(70, size));
+  ellipse(x+escala(60, size), y-escala(60, size), escala(70, size), escala(70, size));
+
+  // CABEZA
+  ellipse(x, y, escala(150, size), escala(150, size));
+
+  // OJOS
+  ellipse(x-escala(20, size), y-escala(20, size), escala(30, size), escala(50, size));
+  ellipse(x-escala(10, size), y-escala(20, size), escala(5, size), escala(5, size));
+  ellipse(x+escala(20, size), y-escala(20, size), escala(30, size), escala(50, size));
+  ellipse(x+escala(10, size), y-escala(20, size), escala(5, size), escala(5, size));
+
+  // NARIZ
+  ellipse(x, y+escala(10, size), escala(30, size), escala(10, size));
+
+  // BOCA
+  ellipse(x, y+escala(40, size), escala(15, size), escala(5, size));
+
+  return true;
+}
+
+
+void dibuja() {
+  
+  background(0,0,0);
+
+  
+  if (keyPressed) {
+    if (key == "g") {     // tecla g  más grande
+      tamOso = tamOso + 5;
+      if (tamOso > 200) { // límite máximo permitido
+        tamOso = 200;
+      }
+    }
+    if (key == "p") {     // tecla p  más pequeño
+      tamOso = tamOso - 5;
+      if (tamOso < 10) {  // límite mínimo permitido
+        tamOso = 10;
+      }
+    }
+  }
+
+  // click derecho  dibujar oso en el lugar del mouse
+  if (mousePressed && mouseButton == RIGHTBUTTON) {
+    oso(mouseX, mouseY, tamOso);
+  }
+}
+
+void main() {
+  animate(dibuja);
+}
