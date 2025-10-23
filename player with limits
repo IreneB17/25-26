@@ -1,0 +1,31 @@
+int x = 160;
+int y = 160;
+
+void main() {
+  animate(ejecutar);
+}
+
+void ejecutar() {
+  player();
+  controles();
+}
+
+void player() {
+  background(19, 15, 58);
+  ellipse(x, y, 50, 50);
+}
+
+void controles() {
+ 
+  if (keyPressed && key == "up") {
+    if (y > 25) { 
+      y = y - 1;
+    }
+  }
+
+ 
+  if (keyPressed && key == "down") {
+    if (y < 320 - 25) { 
+      y = y + 1;
+    }
+  }
