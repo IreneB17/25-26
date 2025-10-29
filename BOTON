@@ -1,0 +1,23 @@
+background(90,84,84);
+
+void boton(){
+  rect(100,100,120,120);
+  fill(255,145,0);
+  
+  if (mouseX>100);
+    if (mouseY>100);
+  
+  if (mouseX<220);
+  
+  if(mousePressed){
+    if (mouseButton==RIGHTBUTTON){
+      println("hola");
+      
+    }
+  }
+
+}
+
+void main(){
+  animate (boton);
+}
