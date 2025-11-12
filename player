@@ -1,41 +1,46 @@
-int x=160;
-int y=160;
-void main(){
-animate (ejecutar);
-  
+int x = 160;
+int y = 160;
+
+void main() {
+  animate(ejecutar);
 }
-void ejecutar(){
+
+void ejecutar() {
   player();
-controles();
+  controles();
+}
+
+void player() {
+  background(19, 15, 58);
+  ellipse(x, y, 50, 50);
+}
+
+void controles() {
+ 
+  if (keyPressed && key == "up") {
+    if (y > 25) { 
+      y = y - 1;
+    }
   }
-void player(){
-  background(19,15,58);
-  ellipse (x,y,50,50);}
-void controles(){
-  if (keyPressed && key=="up"){
-    print("arriba");
-    y=y-1;}
-  
-  if (keyPressed && key=="down");{
-   print("abajo");
-    y=y+1;
-      
- }
-  
-  if (keyPressed && key=="left");{
-   print("izquierda");
-    x=x-1;}
-  
-  if (keyPressed && key=="right");{
-   print("derecha");
-    x=x+1;}
-  
-  if(y==0){
-    y=160;}
-  if(y==0){
-    y=160;}
-  if(y==320){
-    y=160;}
-  if(y==320){
-    y=160;}}
-  
+
+ 
+  if (keyPressed && key == "down") {
+    if (y < 320 - 25) { 
+      y = y + 1;
+    }
+  }
+
+
+  if (keyPressed && key == "left") {
+    if (x > 25) {
+      x = x - 1;
+    }
+  }
+
+ 
+  if (keyPressed && key == "right") {
+    if (x < 320 - 25) {
+      x = x + 1;
+    }
+  }
+}
