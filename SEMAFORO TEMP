@@ -1,0 +1,65 @@
+int estado = 0;
+int tiempoinicio;
+void semaforo(){
+  // SEMAFORO
+  fill(40,140,10);
+  rect(120,70,80,160);
+  //LUCES ENCENDIDAS
+  fill(230,20,20);
+  fill(255,255,0);
+  fill(60,255,0);
+  //LUCES APAGADAS
+  fill(128, 15, 15);
+  fill(146, 146, 5);
+  fill(39, 140, 8);
+  //POSICIONES
+  int x = 160;
+  int r = 100;
+  int a = 150;
+  int v = 200;
+  int d = 40;
+  
+  if(estado == 0){
+    //ROJO
+    fill(230,20,20);
+    ellipse(x, r, d, d);
+    fill(146, 146, 5);
+    ellipse(x, a, d, d);
+    fill(39, 140, 8);
+    ellipse(x, v, d, d);
+  } else if(estado == 1){
+    //VERDE
+    fill(128,15,15);
+    ellipse(x,r,d,d);
+    fill(146,146,5);
+    ellipse(x,a,d,d);
+    fill(60,255,0);
+    ellipse(x,v,d,d);
+  } else if(estado == 2){
+    //AMARILLO
+    fill(128,15,15);
+    ellipse(x,r,d,d);
+    fill(255,255,0);
+    ellipse(x,a,d,d);
+    fill(39,140,8);
+    ellipse(x,v,d,d);
+  }
+  
+  //CAMBIO DE COLOR
+  int tiempoactual = millis();
+  int duracion;
+  
+  if(estado == 0) duracion = 5000;
+  else if(estado == 1) duracion = 3000;
+  else duracion = 1500;
+  
+  if(tiempoactual - tiempoinicio > duracion){
+    estado = (estado + 1)%3;
+    tiempoinicio = tiempoactual;
+  }
+}
+
+void main(){
+  tiempoinicio = millis();
+  animate(semaforo);
+}
