@@ -1,0 +1,271 @@
+// NOTA: FALTA PERFECCIONAR EL MOVIMIENTO DEL CUADRADO AZUL
+// Jugador
+int px = 150;
+int py = 150;
+int sizeP = 20;
+
+// Enemigo
+int ex = 50;
+int ey = 50;
+int dirX = 2;
+int dirY = 2;
+int sizeE = 20;
+
+// Monedas (posiciones fijas)
+int mx1 = 40;  int my1 = 60;   int m1 = 1;
+int mx2 = 260; int my2 = 50;   int m2 = 1;
+int mx3 = 140; int my3 = 40;   int m3 = 1;
+int mx4 = 80;  int my4 = 140;  int m4 = 1;
+int mx5 = 220; int my5 = 120;  int m5 = 1;
+int mx6 = 50;  int my6 = 220;  int m6 = 1;
+int mx7 = 260; int my7 = 200;  int m7 = 1;
+int mx8 = 150; int my8 = 260;  int m8 = 1;
+int mx9 = 30;  int my9 = 280;  int m9 = 1;
+
+int monedas = 0;
+int vidas = 3;
+
+
+// aparte codigo necesario-----
+void main() {
+  animate(menu);
+}
+
+
+
+void menu(){
+  background(72,69,255);
+
+  controlBTN1();
+  imagenBTN1();
+  controlBTN2();
+  imagenBTN2();
+  controlBTN3();
+  imagenBTN3();
+}
+
+void imagenBTN1 (){
+  fill(0,255,249);
+  rect(120,120,80,80);
+  fill(0,0,0);
+  text("PLAY", 137,170);
+}
+
+void imagenBTN2 (){
+  fill(244,176,247);
+  rect(10,15,55,20);
+  fill(38,35,35);
+  text("menu", 15,30);
+}
+
+void imagenBTN3 (){
+  fill(176,247,182);
+  rect(245,15,65,20);
+  fill(38,35,35);
+  text("credits", 250,30);
+}
+
+void controlBTN1(){
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 120 && mouseX < 200 && mouseY > 120 && mouseY < 200) {
+        // reiniciar 
+        px = 150; py = 150;
+        ex = 50; ey = 50;
+        dirX = 2; dirY = 2;
+        vidas = 3;
+        monedas = 0;
+       // monedas
+        m1 = 1; m2 = 1; m3 = 1; m4 = 1; m5 = 1; m6 = 1; m7 = 1; m8 = 1; m9 = 1;
+        animate(play);
+      }
+    }
+  }
+}
+
+void controlBTN2 () {
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 10 && mouseX < 65 && mouseY > 15 && mouseY < 35) {
+        animate(MENU);
+      }
+    }
+  }
+}
+
+void controlBTN3 (){
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 245 && mouseX < 310 && mouseY > 15 && mouseY < 35) {
+        animate(credit);
+      }
+    }
+  }
+}
+
+
+
+void imagenEXIT (){
+  fill(221,255,0);
+  rect(17,2,30,17);
+  fill(38,35,35);
+  text("exit", 17,17);
+}
+
+void controlEXIT(){
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 17 && mouseX < 47 && mouseY > 2 && mouseY < 19) {
+        animate(menu);
+      }
+    }
+  }
+}
+
+
+
+void play(){
+  background(0,68,255);
+  imagenEXIT();
+  controlEXIT();
+
+  
+  if (keyPressed) {
+    if (key == "W") { py = py - 3; }
+    if (key == "S") { py = py + 3; }
+    if (key == "A") { px = px - 3; }
+    if (key == "D") { px = px + 3; }
+  }
+
+  if (px < 0) px = 0;
+  if (px > 280) px = 280;
+  if (py < 20) py = 20;   // 20 para no tapar el HUD
+  if (py > 280) py = 280;
+
+  ex = ex + dirX;
+  ey = ey + dirY;
+
+  if (ex < 0) { dirX = 2; ex = 0; }
+  if (ex > 280){ dirX = -2; ex = 280; }
+  if (ey < 20) { dirY = 2; ey = 20; }
+  if (ey > 280){ dirY = -2; ey = 280; }
+
+  fill(0,0,255);
+  rect(px,py,20,20);
+
+  fill(255,0,0);
+  rect(ex,ey,20,20);
+
+  fill(255,255,0);
+  if (m1 == 1){
+    ellipse(mx1,my1,12,12);
+    if (px < mx1+10 && px+20 > mx1 && py < my1+10 && py+20 > my1){
+      m1 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m2 == 1){
+    ellipse(mx2,my2,12,12);
+    if (px < mx2+10 && px+20 > mx2 && py < my2+10 && py+20 > my2){
+      m2 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m3 == 1){
+    ellipse(mx3,my3,12,12);
+    if (px < mx3+10 && px+20 > mx3 && py < my3+10 && py+20 > my3){
+      m3 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m4 == 1){
+    ellipse(mx4,my4,12,12);
+    if (px < mx4+10 && px+20 > mx4 && py < my4+10 && py+20 > my4){
+      m4 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m5 == 1){
+    ellipse(mx5,my5,12,12);
+    if (px < mx5+10 && px+20 > mx5 && py < my5+10 && py+20 > my5){
+      m5 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m6 == 1){
+    ellipse(mx6,my6,12,12);
+    if (px < mx6+10 && px+20 > mx6 && py < my6+10 && py+20 > my6){
+      m6 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m7 == 1){
+    ellipse(mx7,my7,12,12);
+    if (px < mx7+10 && px+20 > mx7 && py < my7+10 && py+20 > my7){
+      m7 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m8 == 1){
+    ellipse(mx8,my8,12,12);
+    if (px < mx8+10 && px+20 > mx8 && py < my8+10 && py+20 > my8){
+      m8 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m9 == 1){
+    ellipse(mx9,my9,12,12);
+    if (px < mx9+10 && px+20 > mx9 && py < my9+10 && py+20 > my9){
+      m9 = 0;
+      monedas = monedas + 1;
+    }
+  }
+
+  fill(255);
+  text("Vidas: " + vidas, 10,15);
+  text("Monedas: " + monedas + "/9", 220,15);
+
+  if (px < ex + 20 && px + 20 > ex && py < ey + 20 && py + 20 > ey) {
+    vidas = vidas - 1;
+    px = 150; py = 150;
+    if (vidas <= 0) {
+      animate(gameOver);
+    }
+  }
+
+  if (monedas == 9){
+    animate(win);
+  }
+}
+
+
+void MENU(){
+  background(255,157,0);
+  imagenEXIT();
+  controlEXIT();
+  text("¿Cómo ganar?", 10,70);
+  text("Recolecta 9 monedas.", 10,90);
+  text("Evita que te toque el cuadrado rojo.", 10,110);
+  text("Tienes 3 vidas.", 10,130);
+}
+
+
+void credit(){
+  background(247,247,199);
+  imagenEXIT();
+  controlEXIT();
+  text("gracias por jugar, hecho por: Irene Bermúdez Cava",40,180);
+}
+
+
+void win(){
+  background(0,200,0);
+  fill(255);
+  text("¡HAS GANADO!", 100,150);
+}
+
+void gameOver(){
+  background(200,0,0);
+  fill(255);
+  text("GAME OVER", 110,150);
+}
