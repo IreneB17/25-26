@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ingenieria Aeroespacial</title>
+
+<style>
+body{
+  margin: 0;
+  font-family:Arial,sans-serif;
+  scroll-behavior: smooth;
+}
+
+ margin: 0;
+ font-family: Arial, sans-serif;
+ scroll-behavior: smooth;
+}
+
+/* PORTADA */
+ .portada{
+ height: 100vh;
+ background: url("https://www.google.com/imgres?q=ingenieria%20aeroespacial&imgurl=https%3A%2F%2Fwww.uc3m.es%2Fss%2FSatellite%3Fblobcol%3Durldata%26blobkey%3Did%26blobtable%3DMungoBlobs%26blobwhere%3D1371561139995%26ssbinary%3Dtrue&imgrefurl=https%3A%2F%2Fwww.uc3m.es%2Fgrado%2Faeroespacial&docid=D5wBtsfuWbmRfM&tbnid=vZpknMnu8wXi7M&vet=12ahUKEwiY6Y33mNyTAxU9V0EAHY1CNPIQnPAOegQIGBAB..i&w=1000&h=600&hcb=2&ved=2ahUKEwiY6Y33mNyTAxU9V0EAHY1CNPIQnPAOegQIGBAB") no-repeat center/ cover;
+ color: white;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+
+}
+
+ .portada h1{
+  font-size: 50px;
+
+}
+
+ .portada p {
+  font-size: 20px;
+  width: 60%
+
+}
+
+/* INDICE*/
+.indice{
+ background: #001f3f;
+ color: white;
+ padding: 20px;
+}
+
+.indice a{
+ color: #00d4ff;
+ text-decoration: none;
+ display: block;
+ margin: 5px;
+
+}
+
+/*SECCIONES*/
+.seccion{
+ padding: 50px;
+ text-align: center;
+
+}
+
+.seccion:nth-child(even){
+ background: #f0f8ff;
+}
+
+.seccion img{
+ width: 300px;
+ cursor: pointer;
+ transition: transform 0.3s;
+ }
+
+.seccion img:hover{
+ transform: scale(1.1);
+}
+
+/*INFO OCULTA*/
+.info{
+ display: none;
+ margin-top: 20px ;
+ background: #002f5b;
+ color: white;
+ padding: 15px;
+ border-radius: 10px;
+}
+
+</style> 
+
+<script>
+function mostrarInfo(id){
+ var elemento = document.getElementById(id)
+
+ if (elemento.style.display == "block") {
+  elemento.style.display= "none";
+ }else{
+  elemento.style.display= "block";
+}
+}
+</script>
+
+</head>
+
+<body>
+
+<!--PORTADA-->
+<section class="portada">
+ </div>
+</section>
+
+<!--INDICE-->
+<section class="indice">
+ <h2>Indice</h2/>
+ <a href= "#v1">Avion comercial</a>
+ <a href= "#v2">Helicoptero</a>
+ <a href= "#v3">Jet militar</a>
+ <a href= "#v4">Dron</a>
+ <a href= "#v5">Globo aerostatico</a>
+ <a href= "#v6">Dirigible</a>
+ <a href= "#v7">Avion de carga</a>
+ <a href= "#v8">Avion supersonico</a>
+ <a href= "#v9">Cohete espacial</a>
+ <a href= "#v10">Transbordador espacial</a>
+
+</section>
+
+<!--VEHICULOS-->
+
+<section id= "v1"class="seccion">
+<h2>Avion comercial</h2>
+<img
+src="https://ichef.bbci.co.uk/news/640/cpsprodpb/4792/production/_105322381_airbus_getty.jpg"
+onclick="mostrarInfo('info1')">
+<div id= "info1"class= "info">
+Transporte de pasajeros a larga distancia. Alta eficiencia y segridad.
+</div>
+</section>
+
+
+<section id ="v2"class="seccion">
+<h2>HELICOPTERO</h2>
+<img src="https://actualidadaeroespacial.com/wp-content/uploads/2021/01/H160-ANH-150121.jpg"
+onclick="mostrarInfo('info2')">
+<div id = "info2"class="info">
+Puede despegar verticalmente y mantenerse en el aire sin avanzar. 
+</div>
+</section>
+
+
+<section id ="v3"class="seccion">
+<h2>JET MILITAR</h2>
+<img src="https://cdn.pixabay.com/photo/2012/10/26/01/34/aircraft-63028_1280.jpg"
+onclick="mostrarInfo('info3')">
+<div id = "info3"class="info">
+Diseñado para combate, alta velocidad y maniobrabilidad. 
+</div>
+</section>
+
+
+<section id ="v4"class="seccion">
+<h2>DRON</h2>
+<img src="https://www.globalmediterranea.es/wp-content/uploads/2020/01/camara-dron-opt.jpg"
+onclick="mostrarInfo('info4')">
+<div id = "info4"class="info">
+Vehiculo aereo no tripulado usado en vigilancia y fotografia. 
+</div>
+</section>
+
+
+<section id ="v5"class="seccion">
+<h2>GLOBO AEROESTATICO</h2>
+<img src="https://actualidadaeroespacial.com/wp-content/uploads/2023/04/El-globo-de-super-presion-de-la-Nasa-despego-de-Nueva-Zelanda-170423.jpeg"
+onclick="mostrarInfo('info5')">
+<div id = "info5"class="info">
+Utiliza aire caliente para elevarse. Uso recreativo. 
+</div>
+</section>
+
+
+<section id ="v6"class="seccion">
+<h2>DIRIGIBLE</h2>
+<img src="https://elmercantil.com/wp-content/uploads/2021/06/as6k5664-scaled-e1624625255358.jpg"
+onclick="mostrarInfo('info6')">
+<div id = "info6"class="info">
+Aeronave mas ligera que el aire con control de direccion. 
+</div>
+</section>
+
+
+<section id ="v7"class="seccion">
+<h2>AVION DE CARGA</h2>
+<img src="https://fotografias.larazon.es/clipping/cmsimages01/2023/03/23/BFE47CCE-22A7-4AEA-827F-88149FBCD91D/antonov-225-mriya-tierra-videojuego_98.jpg"
+onclick="mostrarInfo('info7')">
+<div id = "info7"class="info">
+Diseñado para transpotar mercancias pesadas. 
+</div>
+</section>
+
+
+<section id ="v8"class="seccion">
+<h2>AVION SUPERSONICO</h2>
+<img src="https://media.cnn.com/api/v1/images/stellar/prod/cnne-1654843-boom-supersonic.jpg"
+onclick="mostrarInfo('info8')">
+<div id = "info8"class="info">
+Capaz de superar la velocidad del sonido. 
+</div>
+</section>
+
+
+<section id ="v9"class="seccion">
+<h2>COHETE ESPACIAL</h2>
+<img src="https://share.america.gov/wp-content/uploads/sites/155/2026/04/Artemis-II-launch-55182696113_0c4398702d_o.jpg"
+onclick="mostrarInfo('info9')">
+<div id = "info9"class="info">
+Vehiculo que viaja al espacio mediante propulsion. 
+</div>
+</section>
+
+
+<section id ="v10"class="seccion">
+<h2>TRANSBORDADOR ESPACIAL</h2>
+<img src="https://content.nationalgeographic.com.es/medio/2025/07/23/1199_00000000_919c61a1_250723124037_1280x740.webp"
+onclick="mostrarInfo('info10')">
+<div id = "info10"class="info">
+Nave reutiñizable utilizada para misiones espaciales. 
+</div>
+</section>
+
+
+</body>
+</html>
