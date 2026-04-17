@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Descubre la programacion</title>
+
+<style>
+body{
+  margin: 0;
+  font-family:Arial,sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f4f4f4;
+}
+
+ 
+
+/* PORTADA */
+ .portada{
+ height: 100vh;
+ background: linear-gradient(to right, #1e3c72, #2a5298);
+ color: white;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+
+}
+
+ .portada h1{
+  font-size: 45px;
+
+}
+
+ 
+/* INDICE*/
+.indice{
+ background: #222;
+ color: white;
+ padding: 20px;
+}
+
+.indice a{
+ display: block;
+ color: #00c3ff;
+ text-decoration: none;
+ display: block;
+ margin: 5px 0;
+
+}
+
+/*SECCIONES*/
+.seccion{
+ padding: 50px;
+ text-align: center
+ background: white;
+ margin: 20px;
+ border-radius: 10px;
+
+}
+
+.seccion img {
+  width: 300 px;
+ margin-top: 15 px;
+ border-radius: 10px;
+
+}
+
+/* BOTON */
+.boton {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #007BFF;
+  color: white;
+  text-decoration: none;
+  boder-radius: 5px;
+  
+}
+
+.boton: hover{
+ background: #0056b3;
+}
+
+</style>
+
+</heat>
+
+<body>
+
+<!-- PORTADA -->
+
+<section class="portada">
+<div>
+<h1>Programa Descubre la programacion</h1>
+<p>Trabajos realizados durante la primera evaulacion</p>
+</div>
+</section>
+<!-- INDICE -->
+<section class="indice">
+<h2>Indice</h2>
+<a href="#trabajo1">Trabajo1</a>
+<a href="#trabajo2">Trabajo2</a>
+<a href="#trabajo3">Trabajo3</a>
+<a href="#trabajo4">Trabajo4</a>
+<a href="#trabajo5">Trabajo5</a>
+<a href="#trabajo6">Trabajo6</a>
+<a href="#trabajo7">Trabajo7</a>
+</section>
+
+
+<!-- TRABAJO1 -->
+<section id="trabajo1" class="seccion">
+<h2>Trabajo 1</h2>
+
+
+<p>En este trabajo hay que usar el lenguaje de programacion para dibujar una cara de eso.</p>
+
+
+<!-- IMAGEN -->
+<img src="foto1.jpg" alt="Trabajo 1">
+
+<!>-- ENLACE -->
+<br>
+<a href="https://github.com/IreneB17/25-26/blob/main/oso" class="boton">
+VER TRABAJO COMPLETO
+
+</a>
+
+<section>
+
+<!-- TRABAJO2 -->
+<section id="trabajo2" class="seccion">
+<h2>Trabajo 2</h2>
+
+
+<p>En este trabajo hay que cambiar el tamaño del oso y su ubicacion usando las teclas del teclado.</p>
+
+
+
+<img src="foto2.jpg" alt="Trabajo 2">
+
+
+<br>
+<a href="https://github.com/IreneB17/25-26/blob/main/oso%20movimiento">
+VER TRABAJO COMPLETO
+
+</a>
+
+<section>
+
+
+<!-- TRABAJO3 -->
+<section id="trabajo3" class="seccion">
+<h2>Trabajo 3</h2>
+
+
+<p>En este trabajo hay que crear un temporizador que haga que el fondo cambie de color cada x segundos.</p>
+
+
+
+<img src="foto3.jpg" alt="Trabajo 3">
+
+
+<br>
+<a href="https://github.com/IreneB17/25-26/blob/main/temporizador%204">
+VER TRABAJO COMPLETO
+
+</a>
+
+<section>
+
+
+<!-- TRABAJO4 -->
+<section id="trabajo4" class="seccion">
+<h2>Trabajo 4</h2>
+
+
+<p>En este trabajo hay que crear un boton que al pulsarlo haga una accion.</p>
+
+
+
+<img src="foto4.jpg" alt="Trabajo 4">
+
+
+<br>
+<a href="https://github.com/IreneB17/25-26/blob/main/BOTON">
+VER TRABAJO COMPLETO
+
+</a>
+
+<section>
+
+
+<!-- TRABAJO5 -->
+<section id="trabajo5" class="seccion">
+<h2>Trabajo 5</h2>
+
+
+<p>En este trabajo hay que crear un semaforo que cada x segundos cambie de color como un semaforo real.</p>
+
+
+
+<img src="foto5.jpg.jpg" alt="Trabajo 5">
+
+
+<br>
+<a href="https://github.com/IreneB17/25-26/blob/main/SEMAFORO%20TEMP">
+VER TRABAJO COMPLETO
+
+</a>
+
+<section>
+
+
+<!-- TRABAJO6 -->
+<section id="trabajo6" class="seccion">
+<h2>Trabajo 6</h2>
+
+
+<p>En este trabajo hay que crear el menu de un juego interactuable con las opciones play,menu y creditos.</p>
+
+
+
+<img src="foto6.jpg" alt="Trabajo 6">
+
+
+<br>
+<a href="https://github.com/IreneB17/25-26/blob/main/menu7">
+VER TRABAJO COMPLETO
+
+</a>
+
+<section>
+
+
+<!-- TRABAJO7 -->
+<section id="trabajo7" class="seccion">
+<h2>Trabajo 7</h2>
+
+
+<p>En este trabajo hay que crear un juego interactuable.</p>
+
+
+
+<img src="foto7.jpg" alt="Trabajo 7">
+
+
+<br>
+<a href="https://github.com/IreneB17/25-26/blob/main/JUEGO%3A%20ESCAPA%20DEL%20ROJO">
+VER TRABAJO COMPLETO
+
+</a>
+
+</section>
+
+
+</body>
+
+</html>
