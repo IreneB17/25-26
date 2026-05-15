@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>1ª Evaluación</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    scroll-behavior:smooth;
+}
+
+/* MENÚ */
+
+nav{
+    background:#001f3f;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00c3ff;
+}
+
+/* PORTADA */
+
+header{
+    background:linear-gradient(to right,#001f3f,#00509e);
+    color:white;
+    text-align:center;
+    padding:60px;
+}
+
+header h1{
+    font-size:45px;
+}
+
+/* SECCIONES */
+
+.seccion{
+    background:white;
+    margin:30px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.seccion h2{
+    color:#001f3f;
+}
+
+/* IMÁGENES */
+
+.seccion img{
+    width:350px;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+/* CÓDIGO */
+
+.codigo{
+    background:#1e1e1e;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    overflow:auto;
+    margin-top:20px;
+}
+
+pre{
+    white-space:pre-wrap;
+}
+
+/* COLORES DEL CÓDIGO */
+
+.variable{
+    color:#4fc3f7;
+}
+
+.funcion{
+    color:#ffd54f;
+}
+
+.condicional{
+    color:#ff8a65;
+}
+
+.comentario{
+    color:#81c784;
+}
+
+/* BOTONES */
+
+.boton{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#007BFF;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+}
+
+.boton:hover{
+    background:#0056b3;
+}
+
+</style>
+
+<script>
+
+function copiarCodigo(id){
+
+const texto =
+document.getElementById(id).innerText;
+
+navigator.clipboard.writeText(texto);
+
+alert("Código copiado");
+
+}
+
+</script>
+
+</head>
+
+<body id="top">
+
+<!-- MENÚ -->
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="mis_gustos.html">Mis gustos</a>
+
+<a href="primera_evaluacion.html">1ª evaluación</a>
+
+<a href="segunda_evaluacion.html">2ª evaluación</a>
+
+</nav>
+
+<!-- PORTADA -->
+
+<header>
+
+<h1>1ª Evaluación</h1>
+
+<p>Trabajos realizados en Descubre la Programación</p>
+
+</header>
+
+<!-- TRABAJO 1 -->
+
+<section class="seccion">
+
+<h2>Trabajo 1 - Cara de oso</h2>
+
+<p>
+En este trabajo se dibuja una cara de oso usando programación.
+</p>
+
+<img src="img2/trabajo1.jpg" alt="Trabajo 1">
+
+<div class="codigo">
+
+<button class="boton"
+onclick="copiarCodigo('codigo1')">
+
+</button>
+
+<pre id="codigo1">
+
+void main() {
+  int oso;
+ 
+  //OREJAS
+  ellipse(100,100, 70,70);
+  ellipse(220,100, 70,70);
+  //cabeza
+  ellipse(160,160, 150,150);
+  //OJOS
+  ellipse(140,140, 30, 50);
+    ellipse(150,140, 5, 5);
+  ellipse(180,140, 30, 50);
+    ellipse(170,140, 5, 5);
+  //nariz
+   ellipse(160,170, 30, 10);
+  //boca
+  ellipse(160,200, 15,5);
+
+}
+
+<span class="comentario">// Cara de oso</span>
+
+<span class="funcion">function</span>
+<span class="variable">setup</span>(){
+
+createCanvas(400,400);
+
+}
+
+<span class="funcion">function</span>
+<span class="variable">draw</span>(){
+
+background(220);
+
+ellipse(200,200,200,200);
+
+}
+
+</pre>
+
+</div>
+
+</section>
+
+<!-- TRABAJO 2 -->
+
+<section class="seccion">
+
+<h2>Trabajo 2 - Movimiento</h2>
+
+<p>
+Movimiento del oso con teclado.
+</p>
+
+<img src="img2/trabajo2.jpg" alt="Trabajo 2">
+
+<div class="codigo">
+
+<button class="boton"
+onclick="copiarCodigo('codigo2')">
+
+</button>
+
+<pre id="codigo2">
+
+// para hacerlo mas grande o mas pequeño primero hay que 
+//manteneer click derecho para que aparezca 
+// pulsar p hacerlo pequeño o pulsar g hacerlo grande
+// 1scale
+int tamOso = 50;
+
+
+int escala(int valor, int size) {
+  return valor * size / 50;
+}
+
+// función oso
+boolean oso(int x, int y, int size) {
+  // OREJAS
+  ellipse(x-escala(60, size), y-escala(60, size), escala(70, size), escala(70, size));
+  ellipse(x+escala(60, size), y-escala(60, size), escala(70, size), escala(70, size));
+
+  // CABEZA
+  ellipse(x, y, escala(150, size), escala(150, size));
+
+  // OJOS
+  ellipse(x-escala(20, size), y-escala(20, size), escala(30, size), escala(50, size));
+  ellipse(x-escala(10, size), y-escala(20, size), escala(5, size), escala(5, size));
+  ellipse(x+escala(20, size), y-escala(20, size), escala(30, size), escala(50, size));
+  ellipse(x+escala(10, size), y-escala(20, size), escala(5, size), escala(5, size));
+
+  // NARIZ
+  ellipse(x, y+escala(10, size), escala(30, size), escala(10, size));
+
+  // BOCA
+  ellipse(x, y+escala(40, size), escala(15, size), escala(5, size));
+
+  return true;
+}
+
+
+void dibuja() {
+  
+  background(0,0,0);
+
+  
+  if (keyPressed) {
+    if (key == "g") {     // tecla g  más grande
+      tamOso = tamOso + 5;
+      if (tamOso > 200) { // límite máximo permitido
+        tamOso = 200;
+      }
+    }
+    if (key == "p") {     // tecla p  más pequeño
+      tamOso = tamOso - 5;
+      if (tamOso < 10) {  // límite mínimo permitido
+        tamOso = 10;
+      }
+    }
+  }
+
+  // click derecho  dibujar oso en el lugar del mouse
+  if (mousePressed && mouseButton == RIGHTBUTTON) {
+    oso(mouseX, mouseY, tamOso);
+  }
+}
+
+void main() {
+  animate(dibuja);
+}
+
+<span class="variable">x</span> = 200;
+
+<span class="funcion">function</span>
+<span class="variable">draw</span>(){
+
+background(220);
+
+ellipse(x,200,100,100);
+
+<span class="condicional">if</span>(keyIsPressed){
+
+x = x + 5;
+
+}
+
+}
+
+</pre>
+
+</div>
+
+</section>
+
+<!-- TRABAJO 3 -->
+
+<section class="seccion">
+
+<h2>Trabajo 3 - Temporizador</h2>
+
+<p>
+Cambio automático de colores.
+</p>
+
+<img src="img2/trabajo3.jpg" alt="Trabajo 3">
+
+<div class="codigo">
+
+<button class="boton"
+onclick="copiarCodigo('codigo3')">
+
+</button>
+
+<pre id="codigo3">
+
+int t1 = millis() / 1000;
+int r = 0;
+int g = 0;
+int b = 0;
+
+void main() {
+  animate(temp);
+}
+
+void temp() {
+  int t2 = millis() / 1000;
+
+  background(r, g, b);
+  fill(255);
+
+  text("t1: " + t1, 20, 20);
+  text("t2: " + t2, 20, 40);
+
+  
+  if (t2 - t1 > 5) {
+    t1 = t2;
+    r = random(0, 255);
+    g = random(0, 255);
+    b = random(0, 255);
+    println("Cambio de color");
+  }
+}
+
+<span class="funcion">function</span>
+<span class="variable">draw</span>(){
+
+background(random(255),
+random(255),
+random(255));
+
+}
+
+</pre>
+
+</div>
+
+</section>
+
+<!-- TRABAJO 4 -->
+
+<section class="seccion">
+
+<h2>Trabajo 4 - Botón</h2>
+
+<p>
+Creación de un botón interactivo.
+</p>
+
+<img src="img2/trabajo4.jpg" alt="Trabajo 4">
+
+<div class="codigo">
+
+<button class="boton"
+onclick="copiarCodigo('codigo4')">
+background(90,84,84);
+
+
+</button>
+
+<pre id="codigo4">
+
+
+void boton(){
+  rect(100,100,120,120);
+  fill(255,145,0);
+  
+  if (mouseX>100);
+    if (mouseY>100);
+  
+  if (mouseX<220);
+  
+  if(mousePressed){
+    if (mouseButton==RIGHTBUTTON){
+      println("hola");
+      
+    }
+  }
+
+}
+
+void main(){
+  animate (boton);
+}
+
+<span class="funcion">function</span>
+<span class="variable">setup</span>(){
+
+let boton =
+createButton("Pulsar");
+
+boton.mousePressed(cambiarColor);
+
+</pre>
+  </div>
+</section> <section id="trabajo5" class="seccion">
+
+}
+
+<!-- TRABAJO 5 -->
+
+<section id="trabajo5" class="seccion">
+
+<h2>Trabajo 5 - Semáforo</h2>
+
+<p>
+Semáforo temporizado
+</p>
+
+<img src="img2/trabajo5.jpg" alt="Trabajo 5">
+<div class="codigo">
+
+<button class="boton"
+onclick="copiarCodigo('codigo5')">
+
+Copiar código
+
+</button>
+
+<pre id="codigo5">
+
+int estado = 0;
+int tiempoinicio;
+void semaforo(){
+  // SEMAFORO
+  fill(40,140,10);
+  rect(120,70,80,160);
+  //LUCES ENCENDIDAS
+  fill(230,20,20);
+  fill(255,255,0);
+  fill(60,255,0);
+  //LUCES APAGADAS
+  fill(128, 15, 15);
+  fill(146, 146, 5);
+  fill(39, 140, 8);
+  //POSICIONES
+  int x = 160;
+  int r = 100;
+  int a = 150;
+  int v = 200;
+  int d = 40;
+  
+  if(estado == 0){
+    //ROJO
+    fill(230,20,20);
+    ellipse(x, r, d, d);
+    fill(146, 146, 5);
+    ellipse(x, a, d, d);
+    fill(39, 140, 8);
+    ellipse(x, v, d, d);
+  } else if(estado == 1){
+    //VERDE
+    fill(128,15,15);
+    ellipse(x,r,d,d);
+    fill(146,146,5);
+    ellipse(x,a,d,d);
+    fill(60,255,0);
+    ellipse(x,v,d,d);
+  } else if(estado == 2){
+    //AMARILLO
+    fill(128,15,15);
+    ellipse(x,r,d,d);
+    fill(255,255,0);
+    ellipse(x,a,d,d);
+    fill(39,140,8);
+    ellipse(x,v,d,d);
+  }
+  
+  //CAMBIO DE COLOR
+  int tiempoactual = millis();
+  int duracion;
+  
+  if(estado == 0) duracion = 5000;
+  else if(estado == 1) duracion = 3000;
+  else duracion = 1500;
+  
+  if(tiempoactual - tiempoinicio > duracion){
+    estado = (estado + 1)%3;
+    tiempoinicio = tiempoactual;
+  }
+}
+
+void main(){
+  tiempoinicio = millis();
+  animate(semaforo);
+}
+
+</pre>
+
+</div>
+
+</section>
+
+
+
+<!-- TRABAJO 6 -->
+
+<section id="trabajo6" class="seccion">
+
+<h2>Trabajo 6 - Menú juego</h2>
+
+<p>
+Menú interactivo para videojuego
+</p>
+
+<img src="img2/trabajo6.jpg" alt="Trabajo 6">
+
+<div class="codigo">
+
+<button class="boton"
+onclick="copiarCodigo('codigo6')">
+
+Copiar código
+
+</button>
+
+<pre id="codigo6">
+
+void main () {
+animate (menu);
+}
+void menu(){
+
+  controlBTN1();
+  imagenBTN1();
+  controlBTN2 ();
+  imagenBTN2 ();
+  controlBTN3 ();
+  imagenBTN3 ();
+}
+void imagenBTN1 (){
+  fill(0,255,249);
+  rect (120,120,80,80);
+  fill(0,0,0);
+  text ("PLAY", 137,170);
+}
+void imagenBTN2 (){ 
+  fill(244,176,247);
+  rect (10,15,55,20);
+  fill(38,35,35);
+  text ("menu", 15,30);
+  
+}
+void imagenBTN3 (){
+  fill(176,247,182);
+  rect (245,15,65,20);
+  fill(38,35,35);
+  text ("credits", 250,30);
+}
+
+ void controlBTN1(){
+  background(72,69,255);
+  println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 120 && mouseX < 200 &&  mouseY > 120 && mouseY < 200) {
+        background(249,162,128);
+       animate(play);
+      }}}}
+void controlBTN2 () {
+       
+  println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 10 && mouseX < 65 &&  mouseY > 15 && mouseY < 35) {
+        background(0,0,0);
+       animate(MENU);
+      }}}}
+void controlBTN3 (){
+   println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 245 && mouseX < 310 &&  mouseY > 15 && mouseY < 35) {
+        background(0,92,255);
+       animate(credit);
+      }}}}
+
+
+void imagenEXIT (){
+  fill(221,255,0);
+  rect (17,02,30,17);
+  fill(38,35,35);
+  text ("exit", 17,17);
+} 
+
+ void controlEXIT(){
+ // background(239,243,245);
+  println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 17 && mouseX < 47 &&  mouseY > 2 && mouseY < 49) {
+        background(0,68,255);
+       animate(menu);
+      }}}}
+
+void play(){
+  background(0,68,255);
+  imagenEXIT ();
+  controlEXIT();
+  if (mousePressed){}
+  if (mouseButton == LEFTBUTTON){
+    ellipse (10,10,10,10);
+  }
+}
+        void MENU(){
+          background(255,157,0);
+          imagenEXIT ();
+  controlEXIT();
+  if (mousePressed){}
+  if (mouseButton == LEFTBUTTON){
+    ellipse (10,10,10,10);
+    text ("¿Como ganar?", 10,70);
+    text ("Necesitas hacer el recorrido sin tocar ", 10,90);
+    text ("las zonas rojas", 10,110);
+    text ("Si el player toca las zonas rojas", 10,170);
+    text ("estas eliminado y volverá al punto ", 10,190);
+     text ("inicial", 10,210);
+    text ("Cada vez que consigas llegar", 10,240);
+    text ("ganarás 100 puntos", 10, 260);
+  }}
+          
+void credit(){
+  background(247,247,199);
+  imagenEXIT ();
+  controlEXIT();
+  if (mousePressed){}
+  if (mouseButton == LEFTBUTTON){
+    ellipse (10,10,10,10);
+    text ("gracias por jugar",40,180);
+  }}
+
+</pre>
+
+</div>
+
+</section>
+
+
+
+<!-- TRABAJO 7 -->
+
+<section id="trabajo7" class="seccion">
+
+<h2>Trabajo 7 - Escapa del rojo</h2>
+
+<p>
+Juego interactivo realizado con programación
+</p>
+
+<img src="img2/trabajo7.jpg" alt="Trabajo 7">
+
+<div class="codigo">
+
+<button class="boton"
+onclick="copiarCodigo('codigo7')">
+
+Copiar código
+
+</button>
+
+<pre id="codigo7">
+
+// BIENBENID@ A: ESCAPA DEL ROJO, todas las instrucciones están en el menú del juego
+// Jugador
+int px = 150;
+int py = 150;
+int sizeP = 20;
+
+// Enemigo
+int ex = 50;
+int ey = 50;
+int dirX = 2;
+int dirY = 2;
+int sizeE = 20;
+
+// Monedas (posiciones fijas)
+int mx1 = 40;  int my1 = 60;   int m1 = 1;
+int mx2 = 260; int my2 = 50;   int m2 = 1;
+int mx3 = 140; int my3 = 40;   int m3 = 1;
+int mx4 = 80;  int my4 = 140;  int m4 = 1;
+int mx5 = 220; int my5 = 120;  int m5 = 1;
+int mx6 = 50;  int my6 = 220;  int m6 = 1;
+int mx7 = 260; int my7 = 200;  int m7 = 1;
+int mx8 = 150; int my8 = 260;  int m8 = 1;
+int mx9 = 30;  int my9 = 280;  int m9 = 1;
+
+int monedas = 0;
+int vidas = 3;
+
+
+// codigo necesario
+void main() {
+  animate(menu);
+}
+
+
+
+void menu(){
+  background(72,69,255);
+
+  controlBTN1();
+  imagenBTN1();
+  controlBTN2();
+  imagenBTN2();
+  controlBTN3();
+  imagenBTN3();
+}
+
+void imagenBTN1 (){
+  fill(0,255,249);
+  rect(120,120,80,80);
+  fill(0,0,0);
+  text("PLAY", 137,170);
+}
+
+void imagenBTN2 (){
+  fill(244,176,247);
+  rect(10,15,55,20);
+  fill(38,35,35);
+  text("menu", 15,30);
+}
+
+void imagenBTN3 (){
+  fill(176,247,182);
+  rect(245,15,65,20);
+  fill(38,35,35);
+  text("credits", 250,30);
+}
+
+void controlBTN1(){
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 120 && mouseX < 200 && mouseY > 120 && mouseY < 200) {
+        // reiniciar 
+        px = 150; py = 150;
+        ex = 50; ey = 50;
+        dirX = 2; dirY = 2;
+        vidas = 3;
+        monedas = 0;
+       // monedas
+        m1 = 1; m2 = 1; m3 = 1; m4 = 1; m5 = 1; m6 = 1; m7 = 1; m8 = 1; m9 = 1;
+        animate(play);
+      }
+    }
+  }
+}
+
+void controlBTN2 () {
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 10 && mouseX < 65 && mouseY > 15 && mouseY < 35) {
+        animate(MENU);
+      }
+    }
+  }
+}
+
+void controlBTN3 (){
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 245 && mouseX < 310 && mouseY > 15 && mouseY < 35) {
+        animate(credit);
+      }
+    }
+  }
+}
+
+
+
+void imagenEXIT (){
+  fill(221,255,0);
+  rect(17,2,30,17);
+  fill(38,35,35);
+  text("exit", 17,17);
+}
+
+void controlEXIT(){
+  if (mousePressed) {
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 17 && mouseX < 47 && mouseY > 2 && mouseY < 19) {
+        animate(menu);
+      }
+    }
+  }
+}
+
+
+
+void play(){
+  background(0,68,255);
+  imagenEXIT();
+  controlEXIT();
+
+  
+  if (keyPressed) {
+    if (key == "W") { py = py - 3; }
+    if (key == "S") { py = py + 3; }
+    if (key == "A") { px = px - 3; }
+    if (key == "D") { px = px + 3; }
+  }
+
+  if (px < 0) px = 0;
+  if (px > 280) px = 280;
+  if (py < 20) py = 20;   // 20 para no tapar el HUD
+  if (py > 280) py = 280;
+
+  ex = ex + dirX;
+  ey = ey + dirY;
+
+  if (ex < 0) { dirX = 2; ex = 0; }
+  if (ex > 280){ dirX = -2; ex = 280; }
+  if (ey < 20) { dirY = 2; ey = 20; }
+  if (ey > 280){ dirY = -2; ey = 280; }
+
+  fill(0,0,255);
+  rect(px,py,20,20);
+
+  fill(255,0,0);
+  rect(ex,ey,20,20);
+
+  fill(255,255,0);
+  if (m1 == 1){
+    ellipse(mx1,my1,12,12);
+    if (px < mx1+10 && px+20 > mx1 && py < my1+10 && py+20 > my1){
+      m1 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m2 == 1){
+    ellipse(mx2,my2,12,12);
+    if (px < mx2+10 && px+20 > mx2 && py < my2+10 && py+20 > my2){
+      m2 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m3 == 1){
+    ellipse(mx3,my3,12,12);
+    if (px < mx3+10 && px+20 > mx3 && py < my3+10 && py+20 > my3){
+      m3 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m4 == 1){
+    ellipse(mx4,my4,12,12);
+    if (px < mx4+10 && px+20 > mx4 && py < my4+10 && py+20 > my4){
+      m4 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m5 == 1){
+    ellipse(mx5,my5,12,12);
+    if (px < mx5+10 && px+20 > mx5 && py < my5+10 && py+20 > my5){
+      m5 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m6 == 1){
+    ellipse(mx6,my6,12,12);
+    if (px < mx6+10 && px+20 > mx6 && py < my6+10 && py+20 > my6){
+      m6 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m7 == 1){
+    ellipse(mx7,my7,12,12);
+    if (px < mx7+10 && px+20 > mx7 && py < my7+10 && py+20 > my7){
+      m7 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m8 == 1){
+    ellipse(mx8,my8,12,12);
+    if (px < mx8+10 && px+20 > mx8 && py < my8+10 && py+20 > my8){
+      m8 = 0;
+      monedas = monedas + 1;
+    }
+  }
+  if (m9 == 1){
+    ellipse(mx9,my9,12,12);
+    if (px < mx9+10 && px+20 > mx9 && py < my9+10 && py+20 > my9){
+      m9 = 0;
+      monedas = monedas + 1;
+    }
+  }
+
+  fill(255);
+  text("Vidas: " + vidas, 10,15);
+  text("Monedas: " + monedas + "/9", 220,15);
+
+  if (px < ex + 20 && px + 20 > ex && py < ey + 20 && py + 20 > ey) {
+    vidas = vidas - 1;
+    px = 150; py = 150;
+    if (vidas <= 0) {
+      animate(gameOver);
+    }
+  }
+
+  if (monedas == 9){
+    animate(win);
+  }
+}
+
+
+void MENU(){
+  background(255,157,0);
+  imagenEXIT();
+  controlEXIT();
+  text("¿Cómo ganar?", 10,70);
+  text("Recolecta 9 monedas.", 10,90);
+  text("Evita que te toque el cuadrado rojo.", 10,110);
+  text("Tienes 3 vidas.", 10,130);
+  text("Te mueves con WASD", 10,150);
+}
+
+
+void credit(){
+  background(247,247,199);
+  imagenEXIT();
+  controlEXIT();
+  text("gracias por jugar, hecho por: Irene Bermúdez Cava",40,180);
+}
+
+
+void win(){
+  background(0,200,0);
+  fill(255);
+  text("¡HAS GANADO!", 100,150);
+}
+
+void gameOver(){
+  background(200,0,0);
+  fill(255);
+  text("GAME OVER", 110,150);
+}
+</pre>
+
+</div>
+
+</section>
+
+
+
+
+<!-- BOTONES FINALES -->
+
+<div style="text-align:center; margin-bottom:40px;">
+
+<a href="#top" class="boton">
+Volver arriba
+</a>
+
+<br><br>
+
+<a href="index.html" class="boton">
+Volver al índice
+</a>
+
+</div>
+
+</body>
+</html>

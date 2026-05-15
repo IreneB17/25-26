@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mis Gustos - Ingeniería Aeroespacial</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+    background:#f4f4f4;
+}
+
+/* MENÚ */
+
+nav{
+    background:#001f3f;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00c3ff;
+}
+
+/* PORTADA */
+
+.portada{
+    height:70vh;
+    background:linear-gradient(to right,#001f3f,#00509e);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.portada h1{
+    font-size:50px;
+}
+
+.portada p{
+    font-size:20px;
+    width:60%;
+}
+
+/* ÍNDICE */
+
+.indice{
+    background:#222;
+    color:white;
+    padding:20px;
+}
+
+.indice a{
+    display:block;
+    color:#00c3ff;
+    text-decoration:none;
+    margin:10px 0;
+}
+
+/* SECCIONES */
+
+.seccion{
+    padding:40px;
+    text-align:center;
+    background:white;
+    margin:30px;
+    border-radius:15px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.seccion h2{
+    color:#001f3f;
+}
+
+/* IMÁGENES */
+
+.seccion img{
+    width:350px;
+    border-radius:10px;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.seccion img:hover{
+    transform:scale(1.05);
+}
+
+/* TABLA */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table, th, td{
+    border:2px solid #001f3f;
+}
+
+th{
+    background:#001f3f;
+    color:white;
+    padding:10px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+}
+
+/* BOTONES */
+
+.boton{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#007BFF;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.boton:hover{
+    background:#0056b3;
+}
+
+/* INFORMACIÓN OCULTA */
+
+.info{
+    display:none;
+    margin-top:20px;
+    background:#002f5b;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+}
+
+</style>
+
+<script>
+
+function mostrarInfo(id){
+
+var elemento = document.getElementById(id);
+
+if(elemento.style.display == "block"){
+
+elemento.style.display = "none";
+
+}else{
+
+elemento.style.display = "block";
+
+}
+
+}
+
+</script>
+
+</head>
+
+<body id="top">
+
+<!-- MENÚ -->
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="mis_gustos.html">Mis gustos</a>
+
+<a href="primera_evaluacion.html">1ª evaluación</a>
+
+<a href="segunda_evaluacion.html">2ª evaluación</a>
+
+</nav>
+
+<!-- PORTADA -->
+
+<section class="portada">
+
+<div>
+
+<h1>Ingeniería Aeroespacial</h1>
+
+<p>
+La ingeniería aeroespacial es uno de mis temas favoritos
+porque me gustan los aviones, cohetes y vehículos espaciales.
+</p>
+
+</div>
+
+</section>
+
+<!-- ÍNDICE -->
+
+<section class="indice">
+
+<h2>Índice</h2>
+
+<a href="#v1">Avión comercial</a>
+<a href="#v2">Helicóptero</a>
+<a href="#v3">Jet militar</a>
+<a href="#v4">Dron</a>
+<a href="#v5">Globo aerostático</a>
+<a href="#v6">Dirigible</a>
+<a href="#v7">Avión de carga</a>
+<a href="#v8">Avión supersónico</a>
+<a href="#v9">Cohete espacial</a>
+<a href="#v10">Transbordador espacial</a>
+
+</section>
+
+<!-- VEHÍCULOS -->
+
+<section id="v1" class="seccion">
+    <h2>Avión comercial</h2>
+
+    <img src="img/avioncomercial.jpg" onclick="mostrarInfo('info1')">
+
+    <div id="info1" class="info">
+        Transporte de pasajeros a larga distancia. Alta eficiencia y seguridad.
+    </div>
+
+    <p>
+        <a href="https://www.airbus.com/" target="_blank" class="boton">Más información</a>
+    </p>
+</section>
+
+<!-- HELICÓPTERO -->
+
+<section id="v2" class="seccion">
+
+<h2>Helicóptero</h2>
+
+<img src="img/helicoptero.jpg"
+onclick="mostrarInfo('info2')">
+
+<div id="info2" class="info">
+
+Puede despegar verticalmente y mantenerse
+en el aire sin avanzar.
+
+</div>
+
+</section>
+
+<!-- JET -->
+
+<section id="v3" class="seccion">
+
+<h2>Jet militar</h2>
+
+<img src="img/jet.jpg"
+onclick="mostrarInfo('info3')">
+
+<div id="info3" class="info">
+
+Diseñado para combate,
+alta velocidad y maniobrabilidad.
+
+</div>
+
+</section>
+
+<!-- DRON -->
+
+<section id="v4" class="seccion">
+
+<h2>Dron</h2>
+
+<img src="img/dron.jpg"
+onclick="mostrarInfo('info4')">
+
+<div id="info4" class="info">
+
+Vehículo aéreo no tripulado usado
+en vigilancia y fotografía.
+
+</div>
+
+</section>
+
+<!-- GLOBO -->
+
+<section id="v5" class="seccion">
+
+<h2>Globo aerostático</h2>
+
+<img src="img/globo.jpg"
+onclick="mostrarInfo('info5')">
+
+<div id="info5" class="info">
+
+Utiliza aire caliente para elevarse.
+Uso recreativo.
+
+</div>
+
+</section>
+
+<!-- DIRIGIBLE -->
+
+<section id="v6" class="seccion">
+
+<h2>Dirigible</h2>
+
+<img src="img/dirigible.jpg"
+onclick="mostrarInfo('info6')">
+
+<div id="info6" class="info">
+
+Aeronave más ligera que el aire
+con control de dirección.
+
+</div>
+
+</section>
+
+<!-- AVIÓN CARGA -->
+
+<section id="v7" class="seccion">
+
+<h2>Avión de carga</h2>
+
+<img src="img/carga.jpg"
+onclick="mostrarInfo('info7')">
+
+<div id="info7" class="info">
+
+Diseñado para transportar mercancías pesadas.
+
+</div>
+
+</section>
+
+<!-- SUPERSONICO -->
+
+<section id="v8" class="seccion">
+
+<h2>Avión supersónico</h2>
+
+<img src="img/supersonico.jpg"
+onclick="mostrarInfo('info8')">
+
+<div id="info8" class="info">
+
+Capaz de superar la velocidad del sonido.
+
+</div>
+
+</section>
+
+<!-- COHETE -->
+
+<section id="v9" class="seccion">
+
+<h2>Cohete espacial</h2>
+
+<img src="img/cohete.jpg"
+onclick="mostrarInfo('info9')">
+
+<div id="info9" class="info">
+
+Vehículo que viaja al espacio mediante propulsión.
+
+</div>
+
+</section>
+
+<!-- TRANSBORDADOR -->
+
+<section id="v10" class="seccion">
+
+<h2>Transbordador espacial</h2>
+
+<img src="img/transbordador.jpg"
+onclick="mostrarInfo('info10')">
+
+<div id="info10" class="info">
+
+Nave reutilizable utilizada para misiones espaciales.
+
+</div>
+
+</section>
+
+<!-- TABLA -->
+
+<section class="seccion">
+
+<h2>Tabla de vehículos aeroespaciales</h2>
+
+<table>
+
+<tr>
+<th>Vehículo</th>
+<th>Uso principal</th>
+<th>Velocidad</th>
+</tr>
+
+<tr>
+<td>Avión comercial</td>
+<td>Pasajeros</td>
+<td>900 km/h</td>
+</tr>
+
+<tr>
+<td>Jet militar</td>
+<td>Combate</td>
+<td>Más de 2000 km/h</td>
+</tr>
+
+<tr>
+<td>Cohete espacial</td>
+<td>Viajes espaciales</td>
+<td>28.000 km/h</td>
+</tr>
+
+</table>
+
+</section>
+
+<!-- BOTONES -->
+
+<div style="text-align:center; margin-bottom:40px;">
+
+<a href="#top" class="boton">
+Volver arriba
+</a>
+
+<br><br>
+
+<a href="index.html" class="boton">
+Volver al inicio
+</a>
+
+</div>
+
+</body>
+</html>

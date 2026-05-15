@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WEB 2º BACHILLERATO</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+    scroll-behavior:smooth;
+}
+
+/* PORTADA */
+
+header{
+    height:100vh;
+    background:linear-gradient(to right,#001f3f,#00509e);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+header h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+header p{
+    font-size:22px;
+    width:60%;
+}
+
+/* MENÚ PRINCIPAL */
+
+.menu{
+    background:#222;
+    padding:30px;
+    text-align:center;
+}
+
+.menu h2{
+    color:white;
+    margin-bottom:30px;
+}
+
+.menu a{
+    display:block;
+    width:300px;
+    margin:20px auto;
+    padding:15px;
+    background:#007BFF;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    background:#0056b3;
+    transform:scale(1.05);
+}
+
+/* SECCIÓN */
+
+.seccion{
+    padding:50px;
+    text-align:center;
+}
+
+/* IMAGEN */
+
+.imagen-portada{
+    width:400px;
+    border-radius:15px;
+    margin-top:30px;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.3);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- PORTADA -->
+
+<header>
+
+<h1>WEB 2º BACHILLERATO</h1>
+
+<p>
+Proyecto final de páginas web con HTML, CSS y JavaScript.
+</p>
+
+<img src="img/portada.jpg"
+class="imagen-portada"
+alt="Portada">
+
+</header>
+
+<!-- MENÚ -->
+
+<section class="menu">
+
+<h2>ÍNDICE PRINCIPAL</h2>
+
+<a href="mis_gustos.html">
+Mis gustos - Ingeniería Aeroespacial
+</a>
+
+<a href="primera_evaluacion.html">
+1ª Evaluación - Descubre la Programación
+</a>
+
+<a href="segunda_evaluacion.html">
+2ª Evaluación - Proyecto Godot
+</a>
+
+</section>
+
+<!-- INFORMACIÓN -->
+
+<section class="seccion">
+
+<h2>Sobre esta página web</h2>
+
+<p>
+En esta web se muestran los trabajos realizados durante
+el curso de 2º de Bachillerato.
+</p>
+
+<p>
+La página está dividida en tres apartados principales:
+</p>
+
+<p>
+
+<b>Mis gustos:</b>
+temas relacionados con la ingeniería aeroespacial.
+
+</p>
+
+<p>
+
+<b>1ª evaluación:</b>
+trabajos y prácticas realizadas en
+“Descubre la programación”.
+
+</p>
+
+<p>
+
+<b>2ª evaluación:</b>
+videojuego realizado con Godot,
+imágenes y enlaces de descarga.
+
+</p>
+
+</section>
+
+</body>
+</html>
